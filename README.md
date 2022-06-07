@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Eliseo Badillo Submission - Ruggable Front-End Assessment (Ops Tech)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
+- Ensure Node is installed
+  - ~ v16.14.2
+- Ensure yarn is installed
+  - ~ v1.22.18
+- Run `yarn install`
+- Run `yarn start`
+  - You browser should open to `http://localhost:3000/`
 
-## Available Scripts
+## Automated Tests
+- Run `yarn test`
 
-In the project directory, you can run:
+## Usage
+- Input target Github user
+  - E.g. "facebook"
+- Press `Enter` or click on the "Search" button
+- Observe the result set
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Potential Improvements
+With additional time, I would have liked to implemented or improved the folowing:
+- Display and sort on more fields on the Github repos
+  - E.g. Number of forks or issues.
+- Paginate results in the table, as some github users (Google) have A LOT of repositories. Sorting and rendering massive amounts of repositories is not very performant
+- Potentially setup an authenticated client with Github to deal with the default rate limiting of 60 req/hr.
+  - Along a similar train of thought here, implementing exponential backoff, but a backoff at an hour time scale might not be worth the effort.
+- Iterate on UI improvements. Material UI makes things acceptable, but there is definite room for improvement.
+- Implement a more sophisticated logging and error handling workflow, as the current approach simply logs errors to the console.
+- Real time search and update of results. I attempted this solution for a little while, but did not find it useful
+  - Seemed to increase the chances of running into rate limiting.
+  - Debouncing would add complexity for a small win in functionality
